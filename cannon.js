@@ -1,9 +1,4 @@
 class Cannon {
-	constructor(posX, posY) {
-        this.posX = posX;
-		this.posY = posY;
-	}
-
     위치지정(posX, posY) {
         this.posX = posX;
 		this.posY = posY;

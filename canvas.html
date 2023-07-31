@@ -31,8 +31,7 @@
 	let 화면계 = document.getElementById("fortressCanvas");
 	화면계.setAttribute('height', 300);
 	화면계.setAttribute('width', 500);
-
-	var context = 화면계.getContext('2d'); /* 컨텍스트 객체*/				
+		
 	var tryCnt = 0; 						/* 쏜 횟수 */
 	var score = 0;							/* 점수 */
 	var imgground = new Image();			/* 그라운드(땅) 이미지 객체 생성 */
@@ -44,13 +43,13 @@
 	// 사용법: 
 	let earth = new Planet(imgground, 10);
 	let ball = new Ball(0.5);
-	let cannon = new Cannon(0, 0);
+	let cannon = new Cannon();
 	let target = new Target(netImage, 450, 60, 30, 200);
 	
 	/* 초기화를 담당하는 함수 */
 	function init() {
 		clearInterval(timer);
-		cannon.위치지정(10, 250);
+		cannon.위치지정(10, 0);
 		cannon.장전(ball);
 		draw();
 	}
@@ -77,20 +76,15 @@
 		 	document.getElementById("score").innerHTML = tryCnt+ "번 쏘아" + "점수=" + score;
 		 	clearInterval(timer);
 		}
-
-		// /* 공이 목표물에 맞았으면 */
-		// /* 공이 경계를 벗어났으면 */
-		// if (ballY >= 300) {
-		// 	clearInterval(timer);
-		// }
 		draw();
 	}
 
 	/* 전체 화면을 그리는 함수 */
 	function draw() {
-		context.clearRect(0, 0, 500, 300);	/* 화면을 지운다. */
-		// earth.draw(context);
-		context.drawImage(imgground, 0, 270);
+		var context = 화면계.getContext('2d'); /* 컨텍스트 객체*/		
+		context.clearRect(0, 0, 화면계.getAttribute('width'), 화면계.getAttribute('height'));	/* 화면을 지운다. */
+		earth.땅그리기(context, 화면계.getAttribute('height'));
+		
 		target.draw(context);
 		ball.drawBall(context);
 	}

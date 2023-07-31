@@ -1,9 +1,6 @@
 class Ball {
 	constructor(radius) {
 		this.radius = radius;
-		/* 위치 */
-		this.posX = 0;
-		this.posY = 0;
 		/* 속도 */
 		this.vX = 0;
 		this.vY = 0;
@@ -13,6 +10,7 @@ class Ball {
 		this.posX = posX;
 		this.posY = posY;
 	}
+
 	발사(ballVx, ballVy) {
 		this.vX = ballVx;
 		this.vY = ballVy;
@@ -22,6 +20,7 @@ class Ball {
 	}
 
 	시간흐름() {
+		/* 중력 가속도 */
 		this.vY += 1.98;
 
 		// 수평 등속 운동
