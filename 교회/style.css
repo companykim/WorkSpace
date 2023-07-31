@@ -1,0 +1,47 @@
+:root {
+    --text-color: #f0f4f5;
+    --background-color: #263343;
+    --accent-color: rgb(87, 170, 166)
+}
+body {
+    margin: 0px;
+    font-family: 'Source Sans Pro';
+}
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/*nav bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #263343;
+    padding: 8px 12px;
+}
+.navbar__logo {
+    font-size: 24px;
+    color: cadetblue;
+}
+
+.navbar__menu li {
+    padding: 10px 20px;
+}
+
+.navbar__icons {
+    list-style: none;
+    display :flex;
+    color:white;
+    padding-left: 0px;
+}
+
+.navbar__icons li {
+     padding: 8px 12px; 
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+}

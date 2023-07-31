@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신청서</title>
+</head>
+<body>
+    <h1>새신자를 환영합니다!</h1>
+    <form action="">
+        <fieldset>
+            <legend>각 항목을 정확하게 작성해주시기 바랍니다.</legend>
+            <ul>
+                <li><label for="user-name" place >이름</label>
+                    <input type="text" id="user-name" required>
+                </li>
+                <li><label for="user-sex">성별<input type="radio" name="sex" value="yes"></input>남
+                <input type="radio" name="sex" value="yes"></input>여</label>
+                </li>
+                <li><label for="user-birth">생년월일</label>
+                    <input type="text" id="user-birth"autofocus placeholder="생년월일 6자리" required>
+                </li>
+                <li><label for="user-phonenumber">전화번호</label>
+                    <input type="text" id="user-phonenumber" autofocus placeholder="-를 제외하고 작성해주세요." required>
+                </li>
+                <li><label for="user-address">주소</label>
+                    <input type="text" id="user-address"autofocus placeholder="" required>
+                </li>
+                <li><label for="user-job">직업</label>
+                    <input type="text" id="user-job" required>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>설문</legend>
+            <ul>
+                <li><label for="route">어떻게 수정교회를 알게 되셨나요?</label>
+                    <select id="route">
+                        <option value="" selected>스스로</option>
+                        <option value="" selected>지인소개</option>
+                        <option value="" selected>타교회</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+        <input type="submit" value="제출">
+    </form>
+</body>
+</html>

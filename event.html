@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>이벤트</title>
+        <style>
+            li {
+                display: inline;
+            }
+            div {
+                width: 100px;
+                height: 100px;
+                border-radius: 5%;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li onclick="chgBG('green')">green</li>
+            <li onclick="chgBG('orange')">orange</li>
+            <li onclick="chgBG('purple')">purple</li>
+        </ul>
+        <div id="result">green</div>
+    </body>
+    <script>
+        function chgBG(bgColor) {
+            let tgt = document.querySelector('#result');
+            tgt.style.backgroundColor = bgColor;
+        }
+    </script>
+</html>
