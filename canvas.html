@@ -42,14 +42,14 @@
 
 	// 사용법: 
 	let earth = new Planet(imgground, 10);
-	let ball = new Ball(0.5);
+	let ball = new Ball(10);
 	let cannon = new Cannon();
 	let target = new Target(netImage, 450, 60, 30, 200);
 	
 	/* 초기화를 담당하는 함수 */
 	function init() {
 		clearInterval(timer);
-		cannon.위치지정(10, 0);
+		cannon.위치지정(10, 250);
 		cannon.장전(ball);
 		draw();
 	}
