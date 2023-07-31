@@ -15,7 +15,7 @@
 </head>
 
 <body onload="init();">
-	<canvas id="fortressCanvas" width="500" height="300"></canvas>
+	<canvas id="fortressCanvas"></canvas>
 	<div>
 		속도<input id="velocity" value="30" type="number" min="0" max="100" step="1" />
 		각도<input id="angle" value="45" type="number" min="0" max="85" step="1" />
@@ -26,11 +26,13 @@
 <script src ="./ball.js"></script>
 <script src ="./cannon.js"></script>
 <script src ="./target.js"></script>
+<script src ="./planet.js"></script>
 <script>
-	var context = document.getElementById('fortressCanvas').getContext('2d'); /* 컨텍스트 객체*/
-	var velocity;							/* 사용자가 입력한 공의 초기속도 */
-	var angle;								/* 사용자가 입력한 공의 초기각도 */
-	var ballV;								/* 공의 현재 속도 */
+	let 화면계 = document.getElementById("fortressCanvas");
+	화면계.setAttribute('height', 300);
+	화면계.setAttribute('width', 500);
+
+	var context = 화면계.getContext('2d'); /* 컨텍스트 객체*/				
 	var tryCnt = 0; 						/* 쏜 횟수 */
 	var score = 0;							/* 점수 */
 	var imgground = new Image();			/* 그라운드(땅) 이미지 객체 생성 */
@@ -40,7 +42,8 @@
 	var timer;
 
 	// 사용법: 
-	let ball = new Ball(10);
+	let earth = new Planet(imgground, 10);
+	let ball = new Ball(0.5);
 	let cannon = new Cannon(0, 0);
 	let target = new Target(netImage, 450, 60, 30, 200);
 	
@@ -55,6 +58,7 @@
 	function start() {
 		tryCnt++;
 		init(); /* 날라가도 다시 초기화하고 시작 */
+
 		/* 사용자가 입력한 공의 초기속도 */
 		velocity = Number(document.getElementById("velocity").value);
 		/* 사용자가 입력한 공의 초기각도 */
@@ -85,6 +89,7 @@
 	/* 전체 화면을 그리는 함수 */
 	function draw() {
 		context.clearRect(0, 0, 500, 300);	/* 화면을 지운다. */
+		// earth.draw(context);
 		context.drawImage(imgground, 0, 270);
 		target.draw(context);
 		ball.drawBall(context);
