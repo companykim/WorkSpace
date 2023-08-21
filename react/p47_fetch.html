@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        fetch("https://api.randomuser.me/?nat=KR&results=10")
+        .then(res => res.json())
+        .then(json=>json.results)
+        .then(console.log)
+        .catch(console.error);
+    </script>
+</body>
+</html>

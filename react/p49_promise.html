@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        const 빵사오기약속 = (count) => 
+            new Promise((성공CallBack, 실패CallBack) => {
+                const restApiUri = `https://api.randomuser.me/?nat=KR&results=${count}`;
+                const req = new XMLHttpRequest();
+                req.open("get", restApiUri);
+                req.onload = () => {
+                    req.status == 200 ? 성공CallBack(
+                        JSON.parse(req.response).results
+                    ) : 실패CallBack(Error(req.statusText));
+                };
+                req.onerror = (변명) => {실패CallBack(변명)};
+                req.send();
+            });
+
+        const 뽀뽀 = (빵) => {
+            console.log(빵 + "맛있게 먹었어요")
+        };
+
+        빵사오기약속(5)
+        .then(뽀뽀)
+        .catch((아빠의변명) => {
+            console.error(`아빠가 ${아빠의변명}일이 있었단다. 미안!`);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        const fakePerson = async () => {
+            try {
+                let res = await fetch("https://api.randomuser.me/?nat=KR&results=10");
+                let {results} = await res.json();
+                console.log(results);
+            } catch(e) {
+                console.error(e);
+            }
+
+        };
+
+        fakePerson();
+    </script>
+</body>
+</html>

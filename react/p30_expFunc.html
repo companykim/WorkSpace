@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        namedFunc(1); 
+        function namedFunc(x=9) {
+            alert("hi " + x);
+        }
+        namedFunc(2);
+    </script>
+</body>
+</html>

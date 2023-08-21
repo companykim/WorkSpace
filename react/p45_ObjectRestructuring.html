@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        const morning = {
+            bf : 99,
+            lu : [1, 2, 3],
+        };
+        const di = "삼치";
+        const bbM = {...morning, di};
+        console.log(morning);
+
+        bbM.bf = "grerggtrgvetg";
+        console.log(morning);
+        console.log(bbM);
+    </script>
+</body>
+</html>

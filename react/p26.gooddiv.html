@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        var div, constainer = document.getElementById("container");
+
+        for (let i = 0; i < 5; i++) {
+            div = document.createElement("div");
+            div.textContent = "이 " + i;
+            div.onclick = function() {
+                alert("이 박스는 #" + i + "입니다.");
+            }
+            container.appendChild(div);
+        }
+    </script>
+</body>
+</html>
