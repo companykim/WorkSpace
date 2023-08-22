@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        // 최고령 나이 찾기
+        const arrAge = [2, 5, 39, 9, 100, 99];
+        // initialValue : 0
+        // callback
+        const callback = (curMax, age) => {
+            console.log(`현 최대값 ${curMax}, 현 나이값 ${age}`);
+            return age > curMax ? age : curMax; 
+        };
+        const eldest = arrAge.reduceRight(callback, 0);
+        console.log(eldest);  // 100
+    </script>
+</body>
+</html>

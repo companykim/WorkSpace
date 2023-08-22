@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        // 객체 배열
+        let scls = [
+            {name: "KAIST"},
+            {name: "UNIST"},
+            {name: "GIST"}
+        ];
+
+        alert(scls[0].name);
+        // 하나의 요소를 변경하는 순수 함수
+        const chgScls = (oldScls, name, arr) => arr.map(item => (item.name === oldScls ? { ...item, name } : item));
+        // 불러서 변경된 결과와
+        let udtScls = chgScls("KAIST", "POSTECH", scls);
+        // 불변 내용을 출력으로 확인`
+        alert(udtScls[0].name);
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        let color_lawn = {
+            title:"잔디",
+            color:"#00ff00",
+            rating:0
+        };
+        function mutableChgRate(lawnColor, newRate) {
+            lawnColor.rating = newRate;
+            return lawnColor;
+        }
+
+        alert(mutableChgRate(color_lawn, 5).rating);
+
+        const rateImmutably = function(lawnColor, newRate) {
+            return Object.assign({}, lawnColor, {rating:newRate});
+        }
+        
+        alert(rateImmutably(color_lawn, 7).rating);
+        alert(color_lawn.rating);
+
+        const rateImmutablyByArrow = (lawnColor, newrating) => (
+            {
+                ...lawnColor,
+                rating:newrating,
+                xx:newrating
+            }
+        );
+
+        alert(rateImmutablyByArrow(color_lawn, 9).xx);
+        alert(color_lawn.rating);
+
+    </script>
+</body>
+</html>
+
+
+
+
+

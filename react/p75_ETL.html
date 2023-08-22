@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        // etl, Extract, Transform and Load
+        // 키, 값으로 이루어진 맵 객체에서 키, 값으로 이루어진 객체 배열로 변환하기
+        const recved = {99:"frfg", 88:{a:99}};
+        const converted = Object.keys(recved).map(aKey=>({
+            key:aKey,
+            val:recved[aKey]
+        }));
+        
+        console.log(converted[0].val.a); // 99
+
+    </script>
+</body>
+</html>

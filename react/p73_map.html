@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        // scls의 명단
+        const scls = ["a", "b", "c"];
+
+        // scls.map은 배열의 모든 원소에 적용해서 반환받은 값으로 이뤄진 새 배열 hangeul에 반환
+        const hangeul = scls.map(scl =>`${scl} 학교`);
+        // array.join()은 배열의 모든 요소를 연결해 하나의 문자열로 만듦
+        alert(hangeul.join("\n"));
+
+        // scls의 명단만 출력
+        alert(scls.join("\n"));
+    </script>
+</body>
+</html>
+
+
+
+
+
