@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        // reduce를 사용하여 값에 들어있는 배열을 하나의 예시객체로 변환한다.
+        
+        //객체 값 지정 
+        const 객체의배열 = [{속성1:"값1", 속성2:99},
+        {속성1:"값2", 속성2:199},
+        {속성1:"값3", 속성2:299},
+        {속성1:"값4", 속성2:399}];
+        
+        // 배열을 객체화 하여 reduce 하기
+        const addToHash = (누산되는hash, {속성1, 속성2}) => {
+            누산되는hash[속성1] = {속성2};
+            return 누산되는hash;
+        };
+
+        // 정렬 후 다시 배치하기
+        const 누산된hash = 객체의배열.reduce(addToHash, {});
+
+        // 결과 값 출력
+        console.log(누산된hash); 
+    </script>
+</body>
+</html>

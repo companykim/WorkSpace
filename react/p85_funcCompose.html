@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        const pipe = (...functions) => 
+        dataToConvert => functions.reduce((acc, fn) => fn(acc), dataToConvert);
+        const getPersonName = ( person ) => person.name;
+        const uppercase = ( strValue ) => strValue.toUpperCase();
+        const get4Characters = ( strValue ) => strValue.substring(0, 4);
+
+        const fname = pipe(getPersonName, uppercase, get4Characters)({ name: 'Hong Gil Dong' });
+        console.log(fname); // HONG
+    </script>
+</body>
+</html>

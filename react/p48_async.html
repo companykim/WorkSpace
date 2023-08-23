@@ -10,7 +10,8 @@
         const fakePerson = async () => {
             try {
                 let res = await fetch("https://api.randomuser.me/?nat=KR&results=10");
-                let {results} = await res.json();
+                let json = await res.json();
+                let {result} = json;
                 console.log(results);
             } catch(e) {
                 console.error(e);

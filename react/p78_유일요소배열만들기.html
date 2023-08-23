@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        // 객체의배열에서 유일한 것들만 배열로 다시 모으기
+
+        const 객체의배열 = [3, 4, 3, 3, 5, 4, 3, 2, 7];
+
+        const 유일한것들만모으기 = (accumulator누산기, currentValue처리할현재요소) => 
+            accumulator누산기.includes(currentValue처리할현재요소) ? 
+                accumulator누산기 // 변화 없는 상태 유지
+                 : [...accumulator누산기, currentValue처리할현재요소]; // 없으니까 추가하자
+
+        const 유일배열 = 객체의배열.reduce(유일한것들만모으기, []);
+        console.log(유일배열);      // [3, 4, 5, 2, 7]
+    </script>
+</body>
+</html>
