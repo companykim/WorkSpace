@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <script type="text/babel">
+        let myArr = [12, 3, 3];
+        let aliasArr = [12, 3, 3];
+
+        myArr.push("hello");
+
+        console.log(myArr); // ["hello"]
+        console.log(aliasArr);
+
+        console.log("issSame : " + (myArr === aliasArr));
+        console.log("issSame : " + (myArr == aliasArr));
+    </script>
+</body>
+</html>
